@@ -1,0 +1,29 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: Contains all email addresses present in the system irrespective if the user has placed and order or not.
+    columns:
+      - name: email
+        description: unique email id for every customer
+        tests:
+          - unique
+          - not_null
+      - name: global_customer_id
+        description: unique customer_id for every customer generated in dbt
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_store_customers
+    description: Customer details from shopify orders.
+    columns:
+      - name: shopify_customer_id
+        description: customer id from shopify data
+        tests:
+          - unique
+          - not_null
+      - name: global_customer_id
+        description: unique customer_id for every customer generated in dbt
+        tests:
+          - not_null

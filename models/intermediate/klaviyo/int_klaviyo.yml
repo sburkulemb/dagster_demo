@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: int_klaviyo__apip_profiles
+  - name: int_klaviyo__mh_profiles
+  - name: int_klaviyo__hatch_profiles
+  - name: due_date_apip
+  - name: due_date_hatch
+  - name: due_date_mh

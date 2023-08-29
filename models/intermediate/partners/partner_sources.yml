@@ -1,0 +1,12 @@
+version: 2
+
+models:
+  - name: src_similac_destinationmaternity_list
+    description: Contains the select query which is used to push data into Similac partner location.
+    columns:
+      - name: Email
+        quote: true
+        description: unique email id for every customer
+        tests:
+          - unique
+          - not_null

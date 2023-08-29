@@ -1,0 +1,115 @@
+name: 'marquee_analytics'
+version: '1.0.0'
+config-version: 2
+
+profile: 'snowflake_test'
+
+model-paths: [ "models" ]
+analysis-paths: [ "analyses" ]
+test-paths: [ "tests" ]
+seed-paths: [ "seeds" ]
+macro-paths: [ "macros" ]
+snapshot-paths: [ "snapshots" ]
+
+target-path: "target"  # directory which will store compiled SQL files
+clean-targets: # directories to be removed by `dbt clean`
+  - "target"
+  - "dbt_packages"
+
+models:
+  marquee_analytics:
+
+    raw:
+      +database: raw
+      +materialized: table
+      shopify:
+        +schema: tmp_shopify
+
+    staging:
+      +database: staging
+      +materialized: table
+      klaviyo:
+        +schema: stg_klaviyo
+      netsuite:
+        +schema: stg_netsuite
+      shopify:
+        +schema: stg_shopify
+
+    intermediate:
+      +database: intermediate
+      +materialized: table
+      klaviyo:
+        +schema: int_klaviyo
+      netsuite:
+        +schema: int_klaviyo
+      shopify:
+        +schema: int_shopify
+      partners:
+        +schema: partner_sources
+
+    marts:
+      +database: marts
+      +materialized: table
+      klaviyo:
+        +schema: mart_klaviyo
+      netsuite:
+        +schema: mart_klaviyo
+      shopify:
+        +schema: mart_klaviyo
+      global:
+        +schema: mart_global
+
+    utils:
+      +materialized: view
+      shopify:
+        +schema: raw_shopify
+
+
+vars:
+  shopify_database: fivetran_database
+  shopify_union_schemas: [ 'assc_shopify', 'bcbg_shopify', 'shopify_apip','shopify_ben', 'shopify_bodyglove', 'shopify_bruno', 'shopify_dakine', 'shopify_hatch', 'shopify_martha', 'shopify_mh' ]
+  shopify_timezone: "America/New_York" # Replace with your timezone
+  customer_pass_through_columns: [ ]
+  order_line_refund_pass_through_columns: [ ]
+  order_line_pass_through_columns: [ ]
+  order_pass_through_columns: [ ]
+  product_pass_through_columns: [ ]
+  product_variant_pass_through_columns: [ ]
+  transaction_pass_through_columns: [ ]
+
+
+  shopify_customer: "{{ ref('stg_shopify__customer') }}"
+  shopify_order: "{{ ref('stg_shopify__order') }}"
+  shopify_order_line: "{{ ref('stg_shopify__order_line') }}"
+  shopify_order_line_refund: "{{ ref('stg_shopify__order_line_refund') }}"
+  shopify_product: "{{ ref('stg_shopify__product') }}"
+  shopify_product_variant: "{{ ref('stg_shopify__product_variant') }}"
+  shopify_transaction: "{{ ref('stg_shopify__transaction') }}"
+  shopify_refund: "{{ ref('stg_shopify__refund') }}"
+  shopify_order_adjustment: "{{ ref('stg_shopify__order_adjustment') }}"
+
+  shopify_abandoned_checkout: "{{ ref('stg_shopify__abandoned_checkout') }}"
+  shopify_collection_product: "{{ ref('stg_shopify__collection_product') }}"
+  shopify_collection: "{{ ref('stg_shopify__collection') }}"
+  shopify_customer_tag: "{{ ref('stg_shopify__customer_tag') }}"
+  shopify_discount_code: "{{ ref('stg_shopify__discount_code') }}"
+  shopify_fulfillment: "{{ ref('stg_shopify__fulfillment') }}"
+  shopify_inventory_item: "{{ ref('stg_shopify__inventory_item') }}"
+  shopify_inventory_level: "{{ ref('stg_shopify__inventory_level') }}"
+  shopify_location: "{{ ref('stg_shopify__location') }}"
+  shopify_metafield: "{{ ref('stg_shopify__metafield') }}"
+  shopify_order_note_attribute: "{{ ref('stg_shopify__order_note_attribute') }}"
+  shopify_order_shipping_line: "{{ ref('stg_shopify__order_shipping_line') }}"
+  shopify_order_shipping_tax_line: "{{ ref('stg_shopify__order_shipping_tax_line') }}"
+  shopify_order_tag: "{{ ref('stg_shopify__order_tag') }}"
+  shopify_order_url_tag: "{{ ref('stg_shopify__order_url_tag') }}"
+  shopify_price_rule: "{{ ref('stg_shopify__price_rule') }}"
+  shopify_product_image: "{{ ref('stg_shopify__product_image') }}"
+  shopify_product_tag: "{{ ref('stg_shopify__product_tag') }}"
+  shopify_shop: "{{ ref('stg_shopify__shop') }}"
+  shopify_tax_line: "{{ ref('stg_shopify__tax_line') }}"
+  shopify_tender_transaction: "{{ ref('stg_shopify__tender_transaction') }}"
+  shopify_abandoned_checkout_discount_code: "{{ ref('stg_shopify__abandoned_checkout_discount_code') }}"
+  shopify_order_discount_code: "{{ ref('stg_shopify__order_discount_code') }}"
+  shopify_abandoned_checkout_shipping_line: "{{ ref('stg_shopify__abandoned_checkout_shipping_line') }}"
+  shopify_fulfillment_event: "{{ ref('stg_shopify__fulfillment_event') }}"

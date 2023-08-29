@@ -1,0 +1,28 @@
+WITH COHORTS AS (
+    SELECT * 
+    FROM {{ ref('shopify__customer_cohorts') }}
+)
+
+SELECT COHORT_MONTH,
+        drop_name,
+       DATE_MONTH,
+       SOURCE_RELATION,
+       COHORT_MONTH_NUMBER,
+       CEIL(COHORT_MONTH_NUMBER/3) COHORT_QUARTER_NUMBER,
+       CEIL(COHORT_MONTH_NUMBER/12) COHORT_YEAR_NUMBER,
+       COUNT(DISTINCT customer_id) COHORT_SIZE,
+       SUM(ORDER_COUNT_IN_MONTH) ORDERS,
+       sum(shopped_in_month) shopped_in_month,
+       SUM(TOTAL_PRICE_IN_MONTH) REVENUE,
+       SUM(subtotal_price_in_month) NET_DISC_REVENUE,
+       sum(new_subtotal_price_in_month) NEW_NET_DISC_REVENUE,
+       SUM(LINE_ITEM_COUNT_IN_MONTH) UNITS,
+       SUM(TOTAL_PRICE_LIFETIME) LIFETIME_REVENUE,
+       SUM(subtotal_price_lifetime) NET_DISC_LIFETIME_REVENUE,
+       sum(new_subtotal_price_lifetime) NEW_NET_DISC_LIFETIME_REVENUE,
+       SUM(ORDER_COUNT_LIFETIME) LIFETIME_ORDERS,
+       COUNT(DISTINCT CASE WHEN ORDER_COUNT_LIFETIME > 1 THEN customer_id END) SECOND_ORDERS,
+       SUM(LINE_ITEM_COUNT_LIFETIME) LIFETIME_UNITS
+FROM COHORTS
+GROUP BY 1,2,3,4,5
+ORDER BY 3,1,2,4,5

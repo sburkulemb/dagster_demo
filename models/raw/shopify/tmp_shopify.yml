@@ -1,0 +1,37 @@
+version: 2
+
+models:
+  - name: tmp_shopify__abandoned_checkout
+  - name: tmp_shopify__abandoned_checkout_discount_code
+  - name: tmp_shopify__abandoned_checkout_shipping_line
+  - name: tmp_shopify__collection
+  - name: tmp_shopify__collection_product
+  - name: tmp_shopify__customer
+  - name: tmp_shopify__customer_tag
+  - name: tmp_shopify__discount_code
+  - name: tmp_shopify__fulfillment
+  - name: tmp_shopify__fulfillment_event
+  - name: tmp_shopify__inventory_item
+  - name: tmp_shopify__inventory_level
+  - name: tmp_shopify__location
+  - name: tmp_shopify__metafield
+  - name: tmp_shopify__order
+  - name: tmp_shopify__order_adjustment
+  - name: tmp_shopify__order_discount_code
+  - name: tmp_shopify__order_line
+  - name: tmp_shopify__order_line_refund
+  - name: tmp_shopify__order_note_attribute
+  - name: tmp_shopify__order_shipping_line
+  - name: tmp_shopify__order_shipping_tax_line
+  - name: tmp_shopify__order_tag
+  - name: tmp_shopify__order_url_tag
+  - name: tmp_shopify__price_rule
+  - name: tmp_shopify__product
+  - name: tmp_shopify__product_image
+  - name: tmp_shopify__product_tag
+  - name: tmp_shopify__product_variant
+  - name: tmp_shopify__refund
+  - name: tmp_shopify__shop
+  - name: tmp_shopify__tax_line
+  - name: tmp_shopify__tender_transaction
+  - name: tmp_shopify__transaction

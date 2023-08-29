@@ -1,0 +1,6 @@
+version: 2
+
+models:
+  - name: stg_klaviyo__apip_profiles
+  - name: stg_klaviyo__mh_profiles
+  - name: stg_klaviyo__hatch_profiles

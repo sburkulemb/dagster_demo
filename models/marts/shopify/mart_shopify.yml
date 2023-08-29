@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: shopify__cohort_analysis
+  - name: shopify__cohort_analysis_customers
+  - name: shopify__customer_cohorts
+  - name: shopify__customer_email_cohorts
+  - name: shopify__customer_emails
+  - name: shopify__customers
+  - name: shopify__daily_shop
+  - name: shopify__order_lines
+  - name: shopify__orders
+  - name: shopify__orders_adjusted
+  - name: shopify__sales_rollup
+  - name: shopify__transactions

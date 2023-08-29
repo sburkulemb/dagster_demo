@@ -1,0 +1,15 @@
+version: 2
+
+models:
+  - name: shopify__orders__order_line_aggregates
+  - name: int_shopify__customer_email_rollup
+  - name: int_shopify__customers__order_aggregates
+  - name: int_shopify__daily_abandoned_checkouts
+  - name: int_shopify__daily_fulfillment
+  - name: int_shopify__daily_orders
+  - name: int_shopify__daily_orders_adjusted
+  - name: int_shopify__emails__order_aggregates
+  - name: int_shopify__order__shipping_aggregates
+  - name: int_shopify__order_line_product
+  - name: int_shopify__orders__order_line_aggregates
+  - name: int_shopify__orders__order_refunds

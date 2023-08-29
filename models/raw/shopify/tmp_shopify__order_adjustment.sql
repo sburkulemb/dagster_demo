@@ -1,0 +1,20 @@
+{%- set source_relation = adapter.get_relation(
+        database=source('shopify', 'order_adjustment').database,
+        schema=source('shopify', 'order_adjustment').schema,
+        identifier=source('shopify', 'order_adjustment').name) -%}
+
+
+
+{{
+    fivetran_utils.union_data(
+        table_identifier='order_adjustment', 
+        database_variable='shopify_database', 
+        schema_variable='shopify_schema', 
+        default_database=target.database,
+        default_schema='shopify',
+        default_variable='order_adjustment_source',
+        union_schema_variable='shopify_union_schemas',
+        union_database_variable='shopify_union_databases'
+    )
+}}
+

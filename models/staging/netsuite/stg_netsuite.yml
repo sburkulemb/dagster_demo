@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: stg_netsuite__inventory_item_location
+  - name: stg_netsuite__item
+  - name: stg_netsuite__location
+  - name: stg_netsuite__salesinvoiced
+  - name: stg_netsuite__transactionline
+  - name: stg_netsuite__transactions
+  - name: stg_netsuite_salesordered

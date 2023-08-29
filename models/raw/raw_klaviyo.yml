@@ -1,0 +1,45 @@
+version: 2
+
+sources:
+  # Data From klaviyo
+  - name: raw_klaviyo__apip
+    schema: klaviyo_apip
+    database: airbyte_database
+    tables:
+      - name: profiles
+
+  - name: raw_klaviyo__assc
+    schema: klaviyo_assc
+    database: airbyte_database
+    tables:
+      - name: profiles
+
+  - name: raw_klaviyo__bcbg
+    schema: klaviyo_bcbg
+    database: airbyte_database
+    tables:
+      - name: profiles
+
+  - name: raw_klaviyo__hatch
+    schema: klaviyo_hatch
+    database: airbyte_database
+    tables:
+      - name: profiles
+
+  - name: raw_klaviyo__martha
+    schema: klaviyo_martha
+    database: airbyte_database
+    tables:
+      - name: profiles
+
+  - name: raw_klaviyo__mh
+    schema: klaviyo_mh
+    database: airbyte_database
+    tables:
+      - name: profiles
+
+  - name: raw_klaviyo__perks
+    schema: klaviyo_perks
+    database: airbyte_database
+    tables:
+      - name: profiles
