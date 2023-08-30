@@ -13,8 +13,9 @@ setup(
         "dagster",
         "dagster-cloud",
         "dagster-dbt",
+        "dagster-airbyte",
         "dbt-core>=1.4.0",
-        "dbt-snowflake","dbt-snowflake","dagster-airbyte"
+        "dbt-snowflake","dbt-snowflake",
     ],
     extras_require={
         "dev": [
