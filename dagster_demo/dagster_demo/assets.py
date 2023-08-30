@@ -13,6 +13,7 @@ airbyte_instance = AirbyteResource(
     password=EnvVar("AIRBYTE_PASS"),
 )
 
+
 @dbt_assets(manifest=dbt_manifest_path)
 def marquee_analytics_dbt_assets(context: OpExecutionContext, dbt: DbtCliResource):
     yield from dbt.cli(["build"], context=context).stream()

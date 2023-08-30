@@ -5,7 +5,7 @@ snowflake_test:
       type: snowflake
       account: fcnkrak-ypb88647
       user: sburkule
-      password: V!xN@7sfeE
+      password: "*4z%c8QhNe"
       role: ACCOUNTADMIN
 
 
@@ -15,63 +15,63 @@ snowflake_test:
       threads: 1
       client_session_keep_alive: False
       query_tag: dev_test
-
-    raw:
-      type: snowflake
-      account: fcnkrak-ypb88647
-      user: sburkule
-      password: V!xN@7sfeE
-      role: ACCOUNTADMIN
-
-      authenticator: externalbrowser
-      database: raw
-      warehouse: ARETOVE_QUERY
-      schema: PUBLIC
-      threads: 1
-      client_session_keep_alive: False
-      query_tag: dev_test
-
-  staging:
-    type: snowflake
-    account: fcnkrak-ypb88647
-    user: sburkule
-    password: V!xN@7sfeE
-    role: ACCOUNTADMIN
-
-    authenticator: externalbrowser
-    database: staging
-    warehouse: ARETOVE_QUERY
-    schema: PUBLIC
-    threads: 1
-    client_session_keep_alive: False
-    query_tag: dev_test
-
-  intermediate:
-    type: snowflake
-    account: fcnkrak-ypb88647
-    user: sburkule
-    password: V!xN@7sfeE
-    role: ACCOUNTADMIN
-
-    authenticator: externalbrowser
-    database: intermediate
-    warehouse: ARETOVE_QUERY
-    schema: PUBLIC
-    threads: 1
-    client_session_keep_alive: False
-    query_tag: dev_test
-
-  marts:
-    type: snowflake
-    account: fcnkrak-ypb88647
-    user: sburkule
-    password: V!xN@7sfeE
-    role: ACCOUNTADMIN
-
-    authenticator: externalbrowser
-    database: marts
-    warehouse: ARETOVE_QUERY
-    schema: PUBLIC
-    threads: 1
-    client_session_keep_alive: False
-    query_tag: dev_test
+#
+#    raw:
+#      type: snowflake
+#      account: fcnkrak-ypb88647
+#      user: sburkule
+#      password: V!xN@7sfeE
+#      role: ACCOUNTADMIN
+#
+#      authenticator: externalbrowser
+#      database: raw
+#      warehouse: ARETOVE_QUERY
+#      schema: PUBLIC
+#      threads: 1
+#      client_session_keep_alive: False
+#      query_tag: dev_test
+#
+#  staging:
+#    type: snowflake
+#    account: fcnkrak-ypb88647
+#    user: sburkule
+#    password: V!xN@7sfeE
+#    role: ACCOUNTADMIN
+#
+#    authenticator: externalbrowser
+#    database: staging
+#    warehouse: ARETOVE_QUERY
+#    schema: PUBLIC
+#    threads: 1
+#    client_session_keep_alive: False
+#    query_tag: dev_test
+#
+#  intermediate:
+#    type: snowflake
+#    account: fcnkrak-ypb88647
+#    user: sburkule
+#    password: V!xN@7sfeE
+#    role: ACCOUNTADMIN
+#
+#    authenticator: externalbrowser
+#    database: intermediate
+#    warehouse: ARETOVE_QUERY
+#    schema: PUBLIC
+#    threads: 1
+#    client_session_keep_alive: False
+#    query_tag: dev_test
+#
+#  marts:
+#    type: snowflake
+#    account: fcnkrak-ypb88647
+#    user: sburkule
+#    password: V!xN@7sfeE
+#    role: ACCOUNTADMIN
+#
+#    authenticator: externalbrowser
+#    database: marts
+#    warehouse: ARETOVE_QUERY
+#    schema: PUBLIC
+#    threads: 1
+#    client_session_keep_alive: False
+#    query_tag: dev_test
