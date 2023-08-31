@@ -14,6 +14,7 @@ setup(
         "dagster-cloud",
         "dagster-dbt",
         "dagster-airbyte",
+        "dagster-fivetran",
         "dbt-core>=1.4.0",
         "dbt-snowflake","dbt-snowflake",
     ],
